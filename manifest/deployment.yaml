@@ -1,0 +1,37 @@
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-application
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: demo
+  template:
+    metadata:
+      name: demo-pod
+      labels:
+        type: demo
+    spec:
+      containers:
+        - name: c1
+          image: ubuntu
+          command: ["/bin/bash","-c","touch ajay.txt"]
+          ports:
+            - containerPort: 8080
+---
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-application-service
+spec:
+  type: ClusterIP
+  selector:
+    type: demo
+  ports:
+  - port: 80
+    targetPort: 8080
+---
