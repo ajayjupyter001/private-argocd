@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: c1
-          image: rajavarman/new1
+          image: ajaya001/my-doc-repo
           ports:
             - containerPort: 8080
 ---
