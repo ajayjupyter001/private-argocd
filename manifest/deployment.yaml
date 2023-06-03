@@ -16,7 +16,7 @@ spec:
         type: demo
     spec:
       imagePullSecrets:
-        - name: pullaccess
+        - name: my-imper-secret
       containers:
         - name: c1
           image: ajaya001/my-doc-repo
