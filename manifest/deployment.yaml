@@ -15,9 +15,12 @@ spec:
       labels:
         type: demo
     spec:
+      imagePullSecrets:
+        - name: pullaccess
       containers:
         - name: c1
           image: ajaya001/my-doc-repo
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 ---
