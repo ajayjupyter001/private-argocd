@@ -21,8 +21,8 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
-      imagePullSecrets:
-        - name: dockerconfigjson
+     imagePullSecrets:
+       - name: repo-secret 
 ---
 ---
 apiVersion: v1
