@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: c1
-          image: ajaya001/my-doc-repo:latest
+          image: ajaya001/my-doc-repo:1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
