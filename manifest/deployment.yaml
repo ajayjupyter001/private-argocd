@@ -15,14 +15,14 @@ spec:
       labels:
         type: demo
     spec:
-      imagePullSecrets:
-        - name: my-imper-secret
       containers:
         - name: c1
-          image: ajaya001/my-doc-repo
+          image: ajaya001/my-doc-repo:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+      imagePullSecrets:
+        - name: dockerconfigjson
 ---
 ---
 apiVersion: v1
