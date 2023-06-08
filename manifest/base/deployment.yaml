@@ -24,16 +24,3 @@ spec:
      imagePullSecrets:
        - name: repo-secret 
 ---
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-application-service
-spec:
-  type: ClusterIP
-  selector:
-    type: demo
-  ports:
-  - port: 80
-    targetPort: 8080
----
