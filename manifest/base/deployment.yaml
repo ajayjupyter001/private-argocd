@@ -17,10 +17,10 @@ spec:
     spec:
       containers:
         - name: c1
-          image: ajaya001/my-doc-repo:1.0
+          image: ajaya001/argocd-private
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
      imagePullSecrets:
-       - name: repo-secret 
+       - name: docker-registry-access
 ---
