@@ -6,3 +6,8 @@ namespace: dev
 replicas:
   - name: my-application
     count: 3
+patchesJson6902:
+  - target:
+      kind: Deployment
+      name: my-application
+    path: patch.yaml

@@ -6,3 +6,8 @@ namespace: prod
 replicas:
   - name: my-application
     count: 4
+patchesJson6902:
+  - target:
+      kind: Deployment
+      name: my-application
+    path: patch.yaml

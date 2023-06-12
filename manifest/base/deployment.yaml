@@ -21,6 +21,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
-        imagePullSecrets:
-       - name: dev-registry-access
+      imagePullSecrets:
+        - name: dev-registry-access
 ---
