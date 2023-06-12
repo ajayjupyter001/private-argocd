@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: c1
-          image: ajaya001/argocd-private
+          image: docker.io/ajaya001/argocd-private
           imagePullPolicy: Always
           ports:
             - containerPort: 8080

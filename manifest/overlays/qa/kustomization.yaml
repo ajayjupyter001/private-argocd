@@ -1,7 +1,7 @@
 resources:
   - ../../base
 namePrefix: qa-
-nameSuffix: qaEnd
+nameSuffix: qaend
 namespace: qa
 replicas:
   - name: my-application
