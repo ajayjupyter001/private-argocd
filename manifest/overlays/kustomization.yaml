@@ -1,5 +1,4 @@
 resources:
-  ../base
-replicas:
-  - name: my-application
-    count: 2 
+  - ../base
+commonLabels:
+  name: ajay
