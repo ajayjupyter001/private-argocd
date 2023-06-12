@@ -1,3 +1,8 @@
 resources:
   - ../base
 namePrefix: qa-
+nameSuffix: qaEnd
+namespace: qa
+replicas:
+  - name: my-deployment
+    count: 5

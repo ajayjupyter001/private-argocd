@@ -1,3 +1,8 @@
 resources:
   - ../base
 namePrefix: dev-
+nameSuffix: devsuffix
+namespace: dev
+replicas:
+  - name: my-application
+    count: 3
