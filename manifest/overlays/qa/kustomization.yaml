@@ -4,5 +4,5 @@ namePrefix: qa-
 nameSuffix: qaEnd
 namespace: qa
 replicas:
-  - name: my-deployment
+  - name: my-application
     count: 5

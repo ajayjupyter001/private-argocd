@@ -4,5 +4,5 @@ namePrefix: prod-
 nameSuffix: prodsuffix
 namespace: prod
 replicas:
-  - name: my-deployment
+  - name: my-application
     count: 4
