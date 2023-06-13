@@ -6,7 +6,7 @@ namespace: dev
 replicas:
   - name: my-application
     count: 3
-patchesJson6902:
+patches:
   - target:
       kind: Deployment
       name: my-application
@@ -21,4 +21,7 @@ patchesJson6902:
           spec:
             containers:
               - name: containerfromdev
-        
+                image: docker.io/ajaya001/argocd-private
+
+    options:
+      allowNameChange: true
