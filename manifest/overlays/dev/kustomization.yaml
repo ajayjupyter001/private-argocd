@@ -11,7 +11,7 @@ patches:
       kind: Deployment
       name: my-application
     path: patch.yaml
-  - |-
+  - patch: |-
       apiVersion: apps/v1
       kind: Deployment
       metadata:
@@ -22,6 +22,5 @@ patches:
             containers:
               - name: containerfromdev
                 image: docker.io/ajaya001/argocd-private
-
     options:
       allowNameChange: true
