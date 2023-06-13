@@ -11,3 +11,14 @@ patchesJson6902:
       kind: Deployment
       name: my-application
     path: patch.yaml
+  - |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: my-application
+      spec:
+        template:
+          spec:
+            containers:
+              - name: containerfromdev
+        
