@@ -20,7 +20,7 @@ spec:
           image: docker.io/ajaya001/argocd-private
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 8081
       imagePullSecrets:
         - name: dev-registry-access
 ---

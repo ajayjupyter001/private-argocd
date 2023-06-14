@@ -18,3 +18,15 @@ patchesJson6902:
       - op: replace
         path: /spec/template/spec/containers/0/name
         value: containersfromprod
+replacements:
+  - source:
+     kind: Deployment
+     name: my-application
+     fieldPath: spec.template.spec.containers.0.ports.0.containerPort
+    targets:
+      - select: 
+          kind: Service
+          name: my-application-service
+        fieldPaths:
+          - spec.ports.0.targetPort
+          

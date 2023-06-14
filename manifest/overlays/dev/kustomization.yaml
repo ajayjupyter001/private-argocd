@@ -20,7 +20,7 @@ patches:
         template:
           spec:
             containers:
-              - name: containerfromdev
+              - name: c1
                 image: docker.io/ajaya001/argocd-private
     options:
       allowNameChange: true
