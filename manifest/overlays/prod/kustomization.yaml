@@ -1,32 +1,34 @@
 resources:
-  - ../../base
+- ../../base
 namePrefix: prod-
 nameSuffix: prodsuffix
 namespace: prod
 replicas:
-  - name: my-application
-    count: 4
+- name: my-application
+  count: 4
 patchesJson6902:
-  - target:
-      kind: Deployment
-      name: my-application
-    path: patch.yaml
-  - target:
-      kind: Deployment
-      name: my-application
-    patch: |-
-      - op: replace
-        path: /spec/template/spec/containers/0/name
-        value: containersfromprod
+- target:
+    kind: Deployment
+    name: my-application
+  path: patch.yaml
+- target:
+    kind: Deployment
+    name: my-application
+  patch: |-
+    - op: replace
+      path: /spec/template/spec/containers/0/name
+      value: containersfromprod
 replacements:
-  - source:
-     kind: Deployment
-     name: my-application
-     fieldPath: spec.template.spec.containers.0.ports.0.containerPort
-    targets:
-      - select: 
-          kind: Service
-          name: my-application-service
-        fieldPaths:
-          - spec.ports.0.targetPort
-          
+- source:
+    kind: Deployment
+    name: my-application
+    fieldPath: spec.template.spec.containers.0.ports.0.containerPort
+  targets:
+  - select:
+      kind: Service
+      name: my-application-service
+    fieldPaths:
+    - spec.ports.0.targetPort
+images:
+- name: docker.io/ajaya001/argocd-private
+  newTag: v3000
