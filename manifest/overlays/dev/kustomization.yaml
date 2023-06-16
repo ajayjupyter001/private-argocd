@@ -1,26 +1,29 @@
 resources:
-  - ../../base
+- ../../base
 namePrefix: dev-
 nameSuffix: devsuffix
 namespace: dev
 replicas:
-  - name: my-application
-    count: 3
+- name: my-application
+  count: 3
 patches:
-  - target:
-      kind: Deployment
+- target:
+    kind: Deployment
+    name: my-application
+  path: patch.yaml
+- patch: |-
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
       name: my-application
-    path: patch.yaml
-  - patch: |-
-      apiVersion: apps/v1
-      kind: Deployment
-      metadata:
-        name: my-application
-      spec:
-        template:
-          spec:
-            containers:
-              - name: c1
-                image: docker.io/ajaya001/argocd-private
-    options:
-      allowNameChange: true
+    spec:
+      template:
+        spec:
+          containers:
+            - name: c1
+              image: docker.io/ajaya001/argocd-private
+  options:
+    allowNameChange: true
+images:
+- name: docker.io/ajaya001/argocd-private
+  newTag: v3000
