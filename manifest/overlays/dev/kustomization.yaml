@@ -28,8 +28,9 @@ patches:
     apiVersion: v1
     kind: Service
     metadata:
-      name: 
-      annotaions:
+     name: vault-example
+     annotations:
+       avp.kubernetes.io/path: "argocd/data/docker-dev"
         
 images:
 - name: docker.io/ajaya001/argocd-private
