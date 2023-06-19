@@ -5,7 +5,7 @@ nameSuffix: devsuffix
 namespace: dev
 replicas:
 - name: my-application
-  count: 3
+  count: 2
 patches:
 - target:
     kind: Deployment
