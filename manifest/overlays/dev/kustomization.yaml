@@ -24,6 +24,13 @@ patches:
               image: docker.io/ajaya001/argocd-private
   options:
     allowNameChange: true
+- patch: |-
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: 
+      annotaions:
+        
 images:
 - name: docker.io/ajaya001/argocd-private
   newTag: v3000
