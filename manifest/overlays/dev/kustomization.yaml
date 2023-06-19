@@ -27,7 +27,7 @@ patches:
 - target: 
     kind: Service
     name: vault-example
-  patch: patch.yaml
+  patch: service_patch.yaml
         
 images:
 - name: docker.io/ajaya001/argocd-private
