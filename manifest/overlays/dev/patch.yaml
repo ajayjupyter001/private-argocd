@@ -3,5 +3,5 @@
   value: dev-vault-exampledevsuffix
 
 - op: replace
-  path: /metadata/annotations/
-  value: dev-vault-exampledevsuffix
+  path: /metadata/annotations/avp.kubernetes.io/path
+  value: argocd/data/docker-dev
