@@ -1,3 +1,6 @@
 - op: replace
   path: /spec/template/spec/imagePullSecrets/0/name
   value: dev-vault-exampledevsuffix
+- op: replace
+  path: /metadata/annotations/
+  value: dev-vault-exampledevsuffix
