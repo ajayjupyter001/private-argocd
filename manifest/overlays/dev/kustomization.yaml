@@ -24,13 +24,10 @@ patches:
               image: docker.io/ajaya001/argocd-private
   options:
     allowNameChange: true
-- patch: |-
-    apiVersion: v1
+- target: 
     kind: Service
-    metadata:
-     name: vault-example
-     annotations:
-       avp.kubernetes.io/path: "argocd/data/docker-dev"
+    name: vault-example
+  patch: patch.yaml
         
 images:
 - name: docker.io/ajaya001/argocd-private
