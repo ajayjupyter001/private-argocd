@@ -22,5 +22,5 @@ spec:
           ports:
             - containerPort: 8081
       imagePullSecrets:
-        - name: dev-registry-access
+        - name: vault-example
 ---
