@@ -24,10 +24,6 @@ patches:
               image: docker.io/ajaya001/argocd-private
   options:
     allowNameChange: true
-- target: 
-    kind: Secret
-    name: vault-example
-  path: service_patch.yaml
 replacements:
 - source:
     kind: Deployment
