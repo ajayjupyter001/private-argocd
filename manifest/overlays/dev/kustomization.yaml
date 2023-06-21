@@ -24,11 +24,12 @@ patches:
               image: docker.io/ajaya001/argocd-private
   options:
     allowNameChange: true
+
 - target: 
-    kind: Service
+    kind: Secret
     name: vault-example
-  patch: service_patch.yaml
-        
+  path: service_patch.yaml
+       
 images:
 - name: docker.io/ajaya001/argocd-private
   newTag: v3000

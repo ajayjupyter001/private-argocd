@@ -20,7 +20,7 @@ spec:
           image: docker.io/ajaya001/argocd-private
           imagePullPolicy: Always
           ports:
-            - containerPort: 8081
+            - containerPort: 3000
       imagePullSecrets:
         - name: vault-example
 ---
