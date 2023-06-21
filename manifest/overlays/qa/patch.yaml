@@ -1,3 +1,3 @@
 - op: replace
   path: /spec/template/spec/imagePullSecrets/0/name
-  value: qa-vault-exampleqasuffix
+  value: qa-vault-exampleqaend
