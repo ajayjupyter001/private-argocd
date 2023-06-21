@@ -28,6 +28,17 @@ patches:
     kind: Secret
     name: vault-example
   path: service_patch.yaml
+replacements:
+- source:
+    kind: Deployment
+    name: my-application
+    fieldPath: spec.template.spec.containers.0.ports.0.containerPort
+  targets:
+  - select:
+      kind: Service
+      name: my-application-service
+    fieldPaths:
+    - spec.ports.0.targetPort
 images:
 - name: docker.io/ajaya001/argocd-private
   newTag: v3000
