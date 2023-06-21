@@ -28,8 +28,13 @@ patches:
 - target: 
     kind: Secret
     name: vault-example
+<<<<<<< HEAD
   path: service_patch.yaml
        
+=======
+  patch: patch.yaml
+        
+>>>>>>> parent of bddb569 (Update kustomization.yaml)
 images:
 - name: docker.io/ajaya001/argocd-private
   newTag: v3000
