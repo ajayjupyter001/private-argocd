@@ -31,4 +31,4 @@ replacements:
     - spec.ports.0.targetPort
 images:
 - name: docker.io/ajaya001/argocd-private
-  newTag: v21
+  newTag: v3000
