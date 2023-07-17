@@ -17,7 +17,7 @@ patchesJson6902:
   patch: |-
     - op: replace
       path: /spec/template/spec/containers/0/name
-      value: containersfromprod
+      value: REPLICA_COUNT
 replacements:
 - source:
     kind: Deployment
