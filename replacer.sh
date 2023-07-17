@@ -17,4 +17,4 @@ else
   echo "The file $file_name does not exist."
 fi
 
-argocd-vault-plugin generate /tmp/tmp.yaml
+argocd-vault-plugin generate /tmp/tmp.yaml > result.yaml
