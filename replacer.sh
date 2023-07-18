@@ -15,6 +15,7 @@ if [ -f "$file_name" ]; then
   done < $file_name
 else
   echo "The file $file_name does not exist."
+  exit 90
 fi
 
 argocd-vault-plugin generate /tmp/tmp.yaml
