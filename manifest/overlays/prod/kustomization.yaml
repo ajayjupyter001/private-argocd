@@ -13,7 +13,7 @@ patchesJson6902:
   patch: |-
     - op: replace
       path: /spec/template/spec/containers/0/name
-      value: CONTAINER_NAME
+      value: container_name
 images:
 - name: docker.io/ajaya001/argocd-private
   newTag: v3000
