@@ -18,4 +18,4 @@ else
   exit 90
 fi
 
-argocd-vault-plugin generate /tmp/tmp.yaml > /tmp/plzwork.yaml
+argocd-vault-plugin generate /tmp/tmp.yaml
