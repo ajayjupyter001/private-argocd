@@ -16,7 +16,7 @@ spec:
         type: demo
     spec:
       containers:
-        - name: REPLICA_COUNT
+        - name: ajay
           image: docker.io/ajaya001/argocd-private
           imagePullPolicy: Always
           ports:
