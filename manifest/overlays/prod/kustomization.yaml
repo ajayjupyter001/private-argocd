@@ -7,4 +7,7 @@ patchesJson6902:
   patch: |-
     - op: replace
       path: /metadata/name
-      value: containername
+      value: container-name
+    - op: replace
+      path: /metadata/name
+      value: container-name
