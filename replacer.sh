@@ -18,4 +18,4 @@ else
 fi
 
 argocd-vault-plugin generate /tmp/tmp.yaml
-cat /tmp/result.yaml
+cat /tmp/tmp.yaml
