@@ -17,4 +17,5 @@ else
   exit 90
 fi
 
-argocd-vault-plugin generate /tmp/tmp.yaml > /tmp/result.yaml
+argocd-vault-plugin generate /tmp/tmp.yaml
+cat /tmp/result.yaml
