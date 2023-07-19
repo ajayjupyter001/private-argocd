@@ -1,3 +1,5 @@
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -9,14 +11,16 @@ spec:
       type: demo
   template:
     metadata:
+      name: demo-pod
       labels:
         type: demo
     spec:
       containers:
-        - name: ajay
+        - name: c1
           image: docker.io/ajaya001/argocd-private
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
       imagePullSecrets:
         - name: vault-example
+---
