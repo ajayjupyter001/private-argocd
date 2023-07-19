@@ -13,6 +13,13 @@ patchesJson6902:
     - op: replace
       path: /spec/template/spec/containers/0/name
       value: container-name
+- target:
+    kind: Deployment
+    name: my-application
+  patch: |-
+    - op: replace
+      path: /spec/replicas
+      value: 
 replacements:
 - source:
     kind: Deployment
