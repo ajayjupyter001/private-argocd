@@ -3,15 +3,32 @@ resources:
 namePrefix: dev-
 nameSuffix: devsuffix
 namespace: dev
-patchesJson6902:
-- target:
-    kind: Deployment
-    name: my-application
-  patch: |-
-    - op: replace
-      path: /spec/replicas
-      value: dev-replica-count
+replicas:
+- name: my-application
+  count: 5
+
+patches:
 - target:
     kind: Deployment
     name: my-application
   path: patch.yaml
+- patch: |-
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: my-application
+    spec:
+      template:
+        spec:
+          containers:
+            - name: c1
+              image: docker.io/ajaya001/argocd-private
+  options:
+    allowNameChange: true
+- target: 
+    kind: Secret
+    name: vault-example
+  path: service_patch.yaml
+images:
+- name: docker.io/ajaya001/argocd-private
+  newTag: v3000
