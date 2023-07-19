@@ -6,39 +6,15 @@ namespace: dev
 replicas:
 - name: my-application
   count: 5
-patches:
+patchesJson6902:
+- target:
+    kind: Deployment
+    name: my-application
+  patch: |-
+    - op: replace
+      path: /spec/replicas
+      value: dev-replica-count
 - target:
     kind: Deployment
     name: my-application
   path: patch.yaml
-- patch: |-
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: my-application
-    spec:
-      template:
-        spec:
-          containers:
-            - name: c1
-              image: docker.io/ajaya001/argocd-private
-  options:
-    allowNameChange: true
-- target:
-    kind: Secret
-    name: vault-example
-  path: service_patch.yaml
-replacements:
-- source:
-    kind: Deployment
-    name: my-application
-    fieldPath: spec.template.spec.containers.0.ports.0.containerPort
-  targets:
-  - select:
-      kind: Service
-      name: my-application-service
-    fieldPaths:
-    - spec.ports.0.targetPort
-images:
-- name: docker.io/ajaya001/argocd-private
-  newTag: v21
