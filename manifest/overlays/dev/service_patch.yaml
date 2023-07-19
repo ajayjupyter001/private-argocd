@@ -1,4 +1,4 @@
 - op: replace
   path: /metadata/annotations/avp.kubernetes.io~1path
-  value: path
+  value: argocd/data/docker
 
