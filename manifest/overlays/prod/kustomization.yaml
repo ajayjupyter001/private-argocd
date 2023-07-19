@@ -11,3 +11,7 @@ patchesJson6902:
     - op: replace
       path: /spec/replicas
       value: replica-count
+- target:
+    kind: Deployment
+    name: my-application
+  path: patch.yaml
