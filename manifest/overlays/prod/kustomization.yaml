@@ -1,10 +1,6 @@
 resources:
 - ../../base
 namespace: prod
-replicas:
-- name: my-application
-  count: 4
-
 patchesJson6902:
 - target:
     kind: Deployment
@@ -16,8 +12,7 @@ patchesJson6902:
   patch: |-
     - op: replace
       path: /spec/template/spec/containers/0/name
-      value: my-name
-        
+      value: container-name
 replacements:
 - source:
     kind: Deployment
