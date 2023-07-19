@@ -9,5 +9,5 @@ patchesJson6902:
       path: /metadata/name
       value: container-name
     - op: replace
-      path: /metadata/name
-      value: container-name
+      path: /spec/replicas
+      value: replica-count
