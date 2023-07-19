@@ -3,14 +3,18 @@ resources:
 namePrefix: qa-
 nameSuffix: qaend
 namespace: qa
-replicas:
-- name: my-application
-  count: 5
 patchesJson6902:
 - target:
     kind: Deployment
     name: my-application
   path: patch.yaml
+- target:
+    kind: Deployment
+    name: my-application
+  patch: |-
+    - op: replace
+      path: /spec/replicas
+      value: qa-replica-count
 - target:
     kind: Deployment
     name: my-application
