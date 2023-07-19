@@ -3,10 +3,6 @@ resources:
 namePrefix: dev-
 nameSuffix: devsuffix
 namespace: dev
-replicas:
-- name: my-application
-  count: 5
-
 patches:
 - target:
     kind: Deployment
