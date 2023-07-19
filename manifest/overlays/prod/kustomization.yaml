@@ -1,11 +1,5 @@
 resources:
 - ../../base
-namePrefix: prod-
-nameSuffix: prodsuffix
-namespace: prod
-replicas:
-- name: my-application
-  count: 4
 patchesJson6902:
 - target:
     kind: Secret
@@ -14,6 +8,3 @@ patchesJson6902:
     - op: replace
       path: /metadata/name
       value: containername
-images:
-- name: docker.io/ajaya001/argocd-private
-  newTag: v3000
