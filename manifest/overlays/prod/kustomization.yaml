@@ -2,8 +2,8 @@ resources:
 - ../../base
 patchesJson6902:
 - target:
-    kind: Secret
-    name: vault-example
+    kind: Deployment
+    name: my-application
   patch: |-
     - op: replace
       path: /metadata/name
