@@ -7,12 +7,27 @@ if [ -f "$file_name" ]; then
   do
     key=$(echo "$line" | cut -d '=' -f 1)
     value=$(echo "$line" | cut -d '=' -f 2)
+
+    #Remove Front spaces
     value=$(echo "$value" | sed 's/^[[:space:]]*//')
+    #Remove Back spaces
     value=$(echo "$value" | sed 's/[[:space:]]*$//')
-    sed -i "s/<<$key>>/$value/g" /tmp/tmp.yaml  #asked sudo password
-    sed -i "s/<< $key>>/$value/g" /tmp/tmp.yaml
-    sed -i "s/<<$key >>/$value/g" /tmp/tmp.yaml
-    sed -i "s/<< $key >>/$value/g" /tmp/tmp.yaml
+
+    # No of Spaces at Begining
+    num_spaces_front=$(expr "$input_string" : '^ *')
+    # No of Spaces at End
+    reversed_string=$(echo "$input_string" | rev)
+    num_spaces_end=$(expr "$reversed_string" : '^ *')
+
+    if [ $num_spaces_front -gt 0 ] && [ $num_spaces_end -gt 0 ]; then
+        sed -i "s/<< $key >>/$value/g" /tmp/tmp.yaml
+    elif [ $num_spaces_front -gt 0 ]; then
+        sed -i "s/<< $key>>/$value/g" /tmp/tmp.yaml
+    elif [ $num_spaces_end -gt 0 ] ; then
+        sed -i "s/<<$key >>/$value/g" /tmp/tmp.yaml
+    else
+        sed -i "s/<<$key>>/$value/g" /tmp/tmp.yaml  #asked sudo password
+    fi
   done < $file_name
 else
   exit 90
