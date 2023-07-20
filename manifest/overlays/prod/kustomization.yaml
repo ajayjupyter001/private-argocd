@@ -19,7 +19,7 @@ patchesJson6902:
   patch: |-
     - op: replace
       path: /spec/replicas
-      value: <<replica-count>>
+      value: << replica-count >>
 replacements:
 - source:
     kind: Deployment
