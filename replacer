@@ -10,4 +10,5 @@ if [ -f "$file_name" ]; then
     sudo sed -i "s/$key/$value/g" /tmp/tmp.yaml  #asked sudo passward
   done < $file_name
 else
+  exit 90
 fi
