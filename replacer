@@ -7,6 +7,8 @@ if [ -f "$file_name" ]; then
   do
     key=$(echo "$line" | cut -d '=' -f 1)
     value=$(echo "$line" | cut -d '=' -f 2)
+    value=$(echo "$value" | sed 's/^[[:space:]]*//')
+    value=$(echo "$value" | sed 's/[[:space:]]*$//')
     sed -i "s/<<$key>>/$value/g" /tmp/tmp.yaml  #asked sudo passward
   done < $file_name
 else
