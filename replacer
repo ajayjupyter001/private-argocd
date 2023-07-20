@@ -10,5 +10,6 @@ if [ -f "$file_name" ]; then
     sed -i "s/$key/$value/g" /tmp/tmp.yaml  #asked sudo passward
   done < $file_name
 else
+  echo "file not found"
   exit 1
 fi
