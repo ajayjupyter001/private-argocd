@@ -1,14 +1,14 @@
 #!/bin/bash
 
-file_name="values.properties"
+file_name=$1
 
 if [ -f "$file_name" ]; then
   while IFS="\n" read -r line
   do
     key=$(echo "$line" | cut -d '=' -f 1)
     value=$(echo "$line" | cut -d '=' -f 2)
-    sed -i "s/$key/$value/g" /tmp/tmp.yaml  #asked sudo passward
+    sudo sed -i "s/$key/$value/g" /tmp/tmp.yaml  #asked sudo passward
   done < $file_name
 else
-  exit 1
+  exit 90
 fi
