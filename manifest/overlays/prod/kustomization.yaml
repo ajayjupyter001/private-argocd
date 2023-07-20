@@ -12,7 +12,7 @@ patchesJson6902:
   patch: |-
     - op: replace
       path: /metadata/name
-      value: <<container-name>>
+      value: << container-name>>
 - target:
     kind: Deployment
     name: my-application
