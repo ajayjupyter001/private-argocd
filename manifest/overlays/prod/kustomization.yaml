@@ -11,7 +11,7 @@ patchesJson6902:
     name: my-application
   patch: |-
     - op: replace
-      path: /spec/template/spec/containers/0/name
+      path: /metadata/name
       value: container-name
 - target:
     kind: Deployment
