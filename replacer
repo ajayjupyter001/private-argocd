@@ -22,6 +22,6 @@ do
   sed -i "s#<< $key >>#$value#g" /tmp/tmp.yaml
 
   #Apply these condition on no spaces
-  sed -i "s/<<$key>>/$value/g" /tmp/tmp.yaml
+  sed -i "s#<<$key>>#$value#g" /tmp/tmp.yaml
 
 done < $file_name
