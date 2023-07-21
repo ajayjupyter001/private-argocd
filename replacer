@@ -9,14 +9,14 @@ do
   value=$(echo "$line" | cut -d '=' -f 2)
 
   #Remove Front spaces for key
-  #key=$(echo "$key" | sed 's/^[[:space:]]*//')
+  key=$(echo "$key" | sed 's/^[[:space:]]*//')
   #Remove Back spaces for key
-  #key=$(echo "$key" | sed 's/[[:space:]]*$//')
+  key=$(echo "$key" | sed 's/[[:space:]]*$//')
 
   #Remove Front spaces for value
-  #value=$(echo "$value" | sed 's/^[[:space:]]*//')
+  value=$(echo "$value" | sed 's/^[[:space:]]*//')
   #Remove Back spaces for value
-  #value=$(echo "$value" | sed 's/[[:space:]]*$//')
+  value=$(echo "$value" | sed 's/[[:space:]]*$//')
 
   #Apply these condition on two spaces
   sed -i "s/<< $key >>/$value/g" /tmp/tmp.yaml
