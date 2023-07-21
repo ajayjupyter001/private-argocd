@@ -2,16 +2,29 @@
 
 file_name=$1
 
+if [ -f "$file_name" ]; then
+  while IFS="\n" read -r line
+  do
+    key=$(echo "$line" | cut -d '=' -f 1)
+    value=$(echo "$line" | cut -d '=' -f 2)
 
-while IFS="\n" read -r line
-do
-  key=$(echo "$line" | cut -d '=' -f 1)
-  value=$(echo "$line" | cut -d '=' -f 2)
+    #Remove Front spaces for key
+    key=$(echo "$key" | sed 's/^[[:space:]]*//')
+    #Remove Back spaces for key
+    key=$(echo "$key" | sed 's/[[:space:]]*$//')
 
-  #Apply these condition on two spaces
-  sed -i "s/<< $key >>/$value/g" /tmp/tmp.yaml
+    #Remove Front spaces for value
+    value=$(echo "$value" | sed 's/^[[:space:]]*//')
+    #Remove Back spaces for value
+    value=$(echo "$value" | sed 's/[[:space:]]*$//')
 
-  #Apply these condition on no spaces
-  sed -i "s/<<$key>>/$value/g" /tmp/tmp.yaml
+    #Apply these condition on two spaces
+    sed -i "s/<< $key >>/$value/g" /tmp/tmp.yaml
 
-done < $file_name
+    #Apply these condition on no spaces
+    sed -i "s/<<$key>>/$value/g" /tmp/tmp.yaml
+
+  done < $file_name
+else
+  exit 90
+fi
