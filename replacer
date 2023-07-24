@@ -21,9 +21,9 @@ do
   value=$(echo "$value" | sed 's/[\/&]/\\&/g')
 
   #Apply these condition on two spaces
-  sed -i "s/<< $key >>/$value/g" /tmp/tmp.yaml
+  sed -i "s/<< $key >>/$value/g"
 
   #Apply these condition on no spaces
-  sed -i "s/<<$key>>/$value/g" /tmp/tmp.yaml
+  sed -i "s/<<$key>>/$value/g"
 
 done < $file_name
