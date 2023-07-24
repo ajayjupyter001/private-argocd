@@ -18,6 +18,8 @@ do
   #Remove Back spaces for value
   value=$(echo "$value" | sed 's/[[:space:]]*$//')
 
+  value=$(echo "$value" | sed 's/[\/&]/\\&/g')
+
   #Apply these condition on two spaces
   sed -i "s/<< $key >>/$value/g" /tmp/tmp.yaml
 
