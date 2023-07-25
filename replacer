@@ -31,3 +31,9 @@ do
   sed -i "s/<<$key>>/$value/g" /tmp/tmp.yaml
 
 done < $file_name
+
+#provide the output as stdout for argocd-vault-plugin
+cat /tmp/tmp.yaml
+
+#remove the tmp.yaml file
+rm /tmp/tmp.yaml
