@@ -1,10 +1,13 @@
 #!/bin/bash
 
-file_name=$1
+#read kustomize output from stdout and stored in tmp file
+cat - > /tmp/tmp.yaml
 
+file_name=$1
 
 while IFS="\n" read -r line
 do
+  #seperate key and value from values.properties file
   key=$(echo "$line" | cut -d '=' -f 1)
   value=$(echo "$line" | cut -d '=' -f 2)
 
@@ -18,12 +21,13 @@ do
   #Remove Back spaces for value
   value=$(echo "$value" | sed 's/[[:space:]]*$//')
 
+  #Apply to escape /
   value=$(echo "$value" | sed 's/[\/&]/\\&/g')
 
   #Apply these condition on two spaces
-  sed -i "s/<< $key >>/$value/g"
+  sed -i "s/<< $key >>/$value/g" /tmp/tmp.yaml
 
   #Apply these condition on no spaces
-  sed -i "s/<<$key>>/$value/g"
+  sed -i "s/<<$key>>/$value/g" /tmp/tmp.yaml
 
 done < $file_name
