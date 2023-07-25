@@ -36,4 +36,4 @@ done < $file_name
 cat /tmp/tmp.yaml
 
 #remove the tmp.yaml file
-rm /tmp/tmp.yaml
+#rm /tmp/tmp.yaml
