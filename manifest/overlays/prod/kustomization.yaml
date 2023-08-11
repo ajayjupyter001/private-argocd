@@ -12,14 +12,14 @@ patchesJson6902:
   patch: |-
     - op: replace
       path: /metadata/name
-      value: <<container-name>>
+      value: aaa
 - target:
     kind: Deployment
     name: my-application
   patch: |-
     - op: replace
       path: /spec/replicas
-      value: << replica-counts >>
+      value: 5
 replacements:
 - source:
     kind: Deployment
